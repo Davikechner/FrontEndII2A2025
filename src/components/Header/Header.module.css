@@ -1,62 +1,106 @@
+/* Header Desktop */
 .header {
-    height: 80px;
-    background-color: #0d1b2a;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: rgba(13, 27, 42, 0.95);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #00b4d8;
+  font-weight: 700;
+}
+
+.ulMenu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  font-size: 18px;
+}
+
+.ulMenu li a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ulMenu li a:hover {
+  color: #00f0ff;
+  transform: scale(1.05);
+}
+
+/* Header Mobile */
+.headerMobile {
+  background-color: rgba(13, 27, 42, 0.95);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+.mobileTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuBtn {
+  cursor: pointer;
+}
+
+.mobileNav {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background-color: #1b263b;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 0 20px;
+}
+
+.mobileNav.open {
+  max-height: 500px; /* espaço suficiente para o menu */
+  padding: 20px;
+}
+
+.mobileNav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobileNav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.mobileNav ul li a:hover {
+  color: #00f0ff;
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .header {
+    display: none;
   }
-  
-  .ulMenu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    font-size: 20px;
-  }
-  
-  .ulMenu li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .ulMenu li a:hover {
-    color: #00b4d8;
-  }
-  
+}
+
+@media (min-width: 601px) {
   .headerMobile {
-    background-color: #0d1b2a;
-    color: white;
-    padding: 10px;
+    display: none;
   }
-  
-  .menuBtn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
-  
-  .mobileNav {
-    margin-top: 50px;
-    background-color: #1b263b;
-    padding: 20px;
-  }
-  
-  .mobileNav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  @media (min-width: 601px) {
-    .headerMobile {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .header {
-      display: none;
-    }
-  }
-  
+}
