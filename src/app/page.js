@@ -1,37 +1,17 @@
 'use client';
-import { useState } from "react";
-import styles from "./page.module.css";
+import { useState } from 'react';
 
 export default function Home() {
-
-  // let cont = 0;
-  const [cont, setCont] = useState(0);
-  const [estilo, setEstilo] = useState('');
-
-  const subtrair = () => {
-    setCont(cont - 1);
-    console.log(cont);
-  }
-
-  const adicionar = () => {
-    setCont(cont + 1);
-    console.log(cont);
-  }
+  const [contador, setContador] = useState(0);
 
   return (
-    <div>
-      <h1 className={styles.h1}>Hello World!</h1>
-      <p className={styles.paragrafo}>Meu parágrafo</p>
-      <button onClick={() => { adicionar() }}>Adicionar</button>
-      <button onClick={() => { subtrair() }}>Subtrair</button>
-      <p>Contagem {cont}</p>
+    <div style={{ padding: '20px' }}>
+      <h1>Bem-vindo à GaláxiaX 🚀</h1>
+      <p>Explore o espaço, conheça missões e astronautas!</p>
 
-      <button onClick={() => { setEstilo('colorido') }}>Estilo Colorido</button>
-      <button onClick={() => { setEstilo('cinza') }}>Estilo Cinza</button>
-      {/* <div className={`${styles.box} ${estilo === 'colorido' ? styles.colorido : styles.cinza}`}></div> */}
-
-
-      <div className={`${styles.box} ${estilo === 'colorido' ? styles.colorido : estilo === 'cinza' ? styles.cinza : ''}`}></div>
+      <button onClick={() => setContador(contador + 1)}>
+        Contador: {contador}
+      </button>
     </div>
   );
 }
