@@ -9,49 +9,65 @@ export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 600);
-    handleResize();
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+    handleResize(); // chama ao montar
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Links atualizados para site de curso JS
+  const navLinks = [
+    { href: '/Sobre', label: 'Sobre o Curso' },
+    { href: '/Aulas', label: 'Aulas' },
+    { href: '/Recurso', label: 'Recursos' },
+  ];
 
   return (
     <>
       {isMobile ? (
         <header className={styles.headerMobile}>
           <div className={styles.mobileTop}>
-            <h1 className={styles.logo}>GaláxiaX 🚀</h1>
-            <div className={styles.menuBtn} onClick={() => setMenuOpen(!menuOpen)}>
+            <h1 className={styles.logo}>JS Mastery 💻</h1>
+            <button
+              className={styles.menuBtn}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
+              aria-label="Alternar menu"
+            >
               <Image
                 src={menuOpen ? '/images/close.png' : '/images/open.png'}
-                alt="Menu"
+                alt="Ícone do menu"
                 width={30}
                 height={30}
               />
-            </div>
+            </button>
           </div>
           <nav
+            id="mobile-nav"
             className={`${styles.mobileNav} ${menuOpen ? styles.open : ''}`}
           >
             <ul>
-              <li><Link href="#sobre">Sobre</Link></li>
-              <li><Link href="#missao">Missões</Link></li>
-              <li><Link href="#astronautas">Astronautas</Link></li>
-              <li><Link href="#galeria">Galeria</Link></li>
-              <li><Link href="#contato">Contato</Link></li>
+              {navLinks.map(link => (
+                <li key={link.href}>
+                  <Link href={link.href}>{link.label}</Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </header>
       ) : (
         <header className={styles.header}>
-          <h1 className={styles.logo}>GaláxiaX 🚀</h1>
+          <h1 className={styles.logo}>JS Mastery 💻</h1>
           <nav>
             <ul className={styles.ulMenu}>
-              <li><Link href="#sobre">Sobre</Link></li>
-              <li><Link href="#missao">Missões</Link></li>
-              <li><Link href="#astronautas">Astronautas</Link></li>
-              <li><Link href="#galeria">Galeria</Link></li>
-              <li><Link href="#contato">Contato</Link></li>
+              {navLinks.map(link => (
+                <li key={link.href}>
+                  <Link href={link.href}>{link.label}</Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </header>

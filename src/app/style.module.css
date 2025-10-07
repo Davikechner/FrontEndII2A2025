@@ -1,116 +1,274 @@
+/* Container geral */
 .container {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0d1b2a, #1b263b);
-    color: #fff;
-    min-height: 100vh;
+  max-width: 900px;
+  margin: 100px auto 60px;
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 122, 204, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  line-height: 1.7;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Animação fadeIn */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
-  
-  /* Hero */
-  .hero {
-    text-align: center;
-    padding: 80px 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .hero h2 {
-    font-size: 2.5rem;
-    color: #00b4d8;
-    margin-bottom: 20px;
-  }
-  
-  .counterBtn {
-    padding: 12px 28px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #00b4d8;
-    color: white;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-  }
-  
-  .counterBtn:hover {
-    background-color: #0096c7;
-    transform: scale(1.05);
-  }
-  
-  /* Seções */
-  .section {
-    margin: 60px 20px;
-    background: rgba(13, 27, 42, 0.8);
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-  }
-  
-  .section h3 {
-    font-size: 2rem;
-    color: #00b4d8;
-    margin-bottom: 20px;
-  }
-  
-  /* Cards */
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
+}
+
+/* Hero */
+.hero {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.title {
+  color: #007acc;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 4px rgba(0, 122, 204, 0.3);
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  margin-bottom: 22px;
+  color: #333;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botão CTA */
+.ctaButton {
+  background-color: #007acc;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 122, 204, 0.4);
+}
+
+.ctaButton:hover {
+  background-color: #005a9e;
+  transform: scale(1.05);
+}
+
+/* Seção de recursos */
+.recursosSection {
+  margin-bottom: 70px;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #005ea6;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 5px rgba(0, 94, 166, 0.2);
+}
+
+/* Container dos cards */
+.cardsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Card individual */
+.card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  width: 280px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 122, 204, 0.25);
+}
+
+/* Imagem do card */
+.cardImage {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
+
+/* Conteúdo do card */
+.cardContent {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardContent h3 {
+  color: #007acc;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.cardContent p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Depoimentos */
+.depoimentosSection {
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.depoimentoCard {
+  background: white;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  font-style: italic;
+  position: relative;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007acc;
+  position: absolute;
+  top: -35px;
+  left: calc(50% - 35px);
+  background-color: white;
+}
+
+.depoimentoText {
+  margin-top: 50px;
+  font-size: 1.15rem;
+  color: #333;
+}
+
+.depoimentoName {
+  margin-top: 18px;
+  font-weight: 700;
+  color: #007acc;
+}
+
+/* Call to Action final */
+.ctaSection {
+  background: #007acc;
+  color: white;
+  padding: 50px 30px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 122, 204, 0.5);
+  margin-bottom: 40px;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  letter-spacing: 1.5px;
+}
+
+.ctaText {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px 10px;
+  color: #555;
+  font-size: 0.95rem;
+  border-top: 1px solid #ddd;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.socialIcon {
+  font-size: 1.8rem;
+  color: #007acc;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.socialIcon:hover {
+  color: #004a7a;
+}
+
+/* Responsividade */
+@media (max-width: 960px) {
+  .cardsContainer {
     justify-content: center;
-    gap: 20px;
   }
-  
+
   .card {
-    background: rgba(0, 180, 216, 0.1);
-    border-radius: 12px;
-    padding: 15px;
-    width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 90%;
+    max-width: 350px;
   }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 180, 216, 0.3);
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.2rem;
   }
-  
-  .card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
+
+  .subtitle {
+    font-size: 1.6rem;
   }
-  
-  .card h4 {
-    color: #00b4d8;
-    margin: 10px 0 5px;
+
+  .paragraph {
+    font-size: 1rem;
   }
-  
-  .card p {
-    font-size: 14px;
+
+  .ctaTitle {
+    font-size: 2rem;
   }
-  
-  /* Galeria */
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+
+  .ctaText {
+    font-size: 1.1rem;
   }
-  
-  .gallery img {
-    width: 250px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  .gallery img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Responsivo */
-  @media (max-width: 600px) {
-    .cards, .gallery {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .hero h2 {
-      font-size: 2rem;
-    }
-  }
-  
+}

@@ -1,0 +1,131 @@
+.main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.navHome {
+  padding: 15px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #013e65;
+  height: 2px;
+  width: 80px;
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.navHome a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navHome:hover {
+  background-color: #005f99;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: #f7fafc;
+  transition: background 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar li:hover {
+  background-color: #e2e8f0;
+}
+
+.active {
+  background-color: #cbd5e0;
+  font-weight: bold;
+}
+
+.check {
+  color: green;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+}
+
+.content h1 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.videoWrapper {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.doneButton {
+  padding: 12px 20px;
+  background-color: #38a169;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.doneButton:hover {
+  background-color: #2f855a;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .videoWrapper iframe {
+    height: 240px;
+  }
+}
